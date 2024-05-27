@@ -8,13 +8,21 @@
     android:padding="16dp">
 
     <TextView
-        android:id="@+id/questionTextView"
+        android:id="@+id/questionNumberView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"/>
+
+    <TextView
+        android:id="@+id/questionTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/questionNumberView"
         android:layout_marginTop="50dp"
+        android:layout_marginStart="10dp"
         android:text="Question?"
-        android:textSize="24sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         android:textColor="@android:color/black" />
 
@@ -88,11 +96,11 @@
         android:layout_alignParentStart="true"
         android:layout_below="@id/nextButton"
         android:layout_marginTop="50dp"
-        android:layout_marginStart="40dp"
-        android:text="Correcte: 0"
+        android:layout_marginStart="50dp"
+        android:text="✔️ 0"
         android:textSize="18sp"
         android:textStyle="bold"
-        android:textColor="@android:color/black" />
+        android:textColor="@android:color/holo_green_dark" />
 
     <TextView
         android:id="@+id/wrongAnswersTextView"
@@ -101,8 +109,20 @@
         android:layout_alignParentEnd="true"
         android:layout_below="@id/nextButton"
         android:layout_marginTop="50dp"
-        android:layout_marginEnd="40dp"
-        android:text="Fausse: 0"
+        android:layout_marginEnd="50dp"
+        android:text="❌ 0"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/holo_red_dark" />
+
+    <TextView
+        android:id="@+id/timerTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/nextButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:text="Time left: 30"
         android:textSize="18sp"
         android:textStyle="bold"
         android:textColor="@android:color/black" />

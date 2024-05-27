@@ -1,7 +1,7 @@
 package com.example.tp1
 
-import android.content.Intent
 import android.os.Bundle
+import android.os.CountDownTimer
 import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -15,6 +15,8 @@ class QuizzActivity : AppCompatActivity() {
     private lateinit var questions: List<Question>
     private lateinit var correctAnswersTextView: TextView
     private lateinit var wrongAnswersTextView: TextView
+    private lateinit var timerTextView: TextView
+    private lateinit var countDownTimer: CountDownTimer
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,6 +24,7 @@ class QuizzActivity : AppCompatActivity() {
 
         correctAnswersTextView = findViewById(R.id.correctAnswersTextView)
         wrongAnswersTextView = findViewById(R.id.wrongAnswersTextView)
+        timerTextView = findViewById(R.id.timerTextView)
 
         val category = intent.getStringExtra("CATEGORY")
         questions = getQuestionsForCategory(category)
@@ -30,6 +33,7 @@ class QuizzActivity : AppCompatActivity() {
 
         val nextButton = findViewById<Button>(R.id.nextButton)
         nextButton.setOnClickListener {
+            countDownTimer.cancel()
             showNextQuestion()
         }
     }
@@ -61,7 +65,7 @@ class QuizzActivity : AppCompatActivity() {
         Question("Quel jeu vidéo se déroule dans la ville fictive de 'Vice City'?", "GTA Vice City", listOf("GTA Vice City", "GTA San Andreas", "GTA III", "GTA IV")),
         Question("Quel est le nom du compagnon de Sonic?", "Tails", listOf("Tails", "Knuckles", "Shadow", "Amy")),
         Question("Quel jeu de combat met en scène des personnages comme Ryu et Ken?", "Street Fighter", listOf("Street Fighter", "Mortal Kombat", "Tekken", "Soul Calibur")),
-        Question("Quelle est la première console de jeux vidéo de Nintendo?", "Nintendo Entertainment System", listOf("Nintendo Entertainment System", "Super Nintendo", "Nintendo 64", "GameCube")),
+        Question("Quelle est la première console de jeux vidéo de Nintendo?", "Nintendo NES", listOf("Nintendo NES", "Super Nintendo", "Nintendo 64", "GameCube")),
         Question("Quel jeu met en scène un plombier essayant de sauver une princesse?", "Super Mario Bros", listOf("Super Mario Bros", "Donkey Kong", "The Legend of Zelda", "Metroid")),
         Question("Quel est le personnage principal de 'Metal Gear Solid'?", "Solid Snake", listOf("Solid Snake", "Big Boss", "Liquid Snake", "Raiden")),
         Question("Quel est le jeu vidéo le plus vendu sur la Nintendo Switch?", "Mario Kart 8 Deluxe", listOf("Mario Kart 8 Deluxe", "The Legend of Zelda: Breath of the Wild", "Super Mario Odyssey", "Animal Crossing: New Horizons"))
@@ -162,7 +166,11 @@ class QuizzActivity : AppCompatActivity() {
         }
 
         val question = questions[currentQuestionIndex]
+        val questionNumber = currentQuestionIndex + 1
+        val questionNumberView = findViewById<TextView>(R.id.questionNumberView)
         val questionTextView = findViewById<TextView>(R.id.questionTextView)
+
+        questionNumberView.text = "💡 Question $questionNumber"
         questionTextView.text = question.text
 
         val answerButtons = listOf<Button>(
@@ -175,6 +183,7 @@ class QuizzActivity : AppCompatActivity() {
         question.answers.shuffled().forEachIndexed { index, answer ->
             answerButtons[index].text = answer
             answerButtons[index].setOnClickListener {
+                countDownTimer.cancel()
                 if (answer == question.correctAnswer) {
                     correctAnswers++
                 } else {
@@ -185,12 +194,27 @@ class QuizzActivity : AppCompatActivity() {
             }
         }
 
+        startTimer()
         currentQuestionIndex++
     }
 
+    private fun startTimer() {
+        countDownTimer = object : CountDownTimer(15000, 1000) {
+            override fun onTick(millisUntilFinished: Long) {
+                timerTextView.text = "Time left: ${millisUntilFinished / 1000}"
+            }
+
+            override fun onFinish() {
+                wrongAnswers++
+                updateScore()
+                showNextQuestion()
+            }
+        }.start()
+    }
+
     private fun updateScore() {
-        correctAnswersTextView.text = "Correct: $correctAnswers"
-        wrongAnswersTextView.text = "Wrong: $wrongAnswers"
+        correctAnswersTextView.text = "✔️ $correctAnswers"
+        wrongAnswersTextView.text = "❌ $wrongAnswers"
     }
 
 //    private fun showScore() {
