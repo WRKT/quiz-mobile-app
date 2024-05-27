@@ -1,5 +1,7 @@
 package com.example.tp1
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.widget.Button
@@ -161,7 +163,8 @@ class QuizzActivity : AppCompatActivity() {
 
     private fun showNextQuestion() {
         if (currentQuestionIndex >= questions.size) {
-//            showScore()
+            saveScore()
+            showScore()
             return
         }
 
@@ -217,13 +220,23 @@ class QuizzActivity : AppCompatActivity() {
         wrongAnswersTextView.text = "❌ $wrongAnswers"
     }
 
-//    private fun showScore() {
-//        val intent = Intent(this, ScoreActivity::class.java)
-//        intent.putExtra("CORRECT_ANSWERS", correctAnswers)
-//        intent.putExtra("WRONG_ANSWERS", wrongAnswers)
-//        startActivity(intent)
-//        finish()
-//    }
+    private fun saveScore() {
+        val prefs = getSharedPreferences("quiz_scores", Context.MODE_PRIVATE)
+        val editor = prefs.edit()
+        val username = intent.getStringExtra("USERNAME")
+        val category = intent.getStringExtra("CATEGORY")
+        val key = "$username-$category"
+        editor.putInt(key, correctAnswers)
+        editor.apply()
+    }
+
+    private fun showScore() {
+        val intent = Intent(this, ScoreActivity::class.java)
+        intent.putExtra("CORRECT_ANSWERS", correctAnswers)
+        intent.putExtra("WRONG_ANSWERS", wrongAnswers)
+        startActivity(intent)
+        finish()
+    }
 }
 
 data class Question(val text: String, val correctAnswer: String, val answers: List<String>)
