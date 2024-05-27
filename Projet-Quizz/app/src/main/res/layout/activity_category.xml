@@ -22,6 +22,7 @@
 
         <Button
             android:id="@+id/videoGamesButton"
+            android:background="@drawable/button_background"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
@@ -29,6 +30,7 @@
 
         <Button
             android:id="@+id/cinemaButton"
+            android:background="@drawable/button_background"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -36,6 +38,7 @@
 
         <Button
             android:id="@+id/sportButton"
+            android:background="@drawable/button_background"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -43,6 +46,7 @@
 
         <Button
             android:id="@+id/mathsButton"
+            android:background="@drawable/button_background"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -50,6 +54,7 @@
 
         <Button
             android:id="@+id/musicButton"
+            android:background="@drawable/button_background"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"

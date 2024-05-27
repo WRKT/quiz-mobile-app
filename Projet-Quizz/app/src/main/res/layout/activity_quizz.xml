@@ -4,60 +4,127 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".QuizActivity">
+    tools:context=".QuizzActivity"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/questionNumberView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"/>
 
     <TextView
         android:id="@+id/questionTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
+        android:layout_below="@id/questionNumberView"
         android:layout_marginTop="50dp"
+        android:layout_marginStart="10dp"
         android:text="Question?"
-        android:textSize="24dp" />
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black" />
 
-    <Button
-        android:id="@+id/answerButton1"
-        android:layout_width="wrap_content"
+    <GridLayout
+        android:id="@+id/answerGrid"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/questionTextView"
-        android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:text="Answer 1" />
+        android:columnCount="2"
+        android:rowCount="2"
+        android:layout_gravity="center">
 
-    <Button
-        android:id="@+id/answerButton2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/answerButton1"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        android:text="Answer 2" />
+        <Button
+            android:id="@+id/answerButton1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_columnWeight="1"
+            android:background="@drawable/button_background"
+            android:text="Answer 1"
+            android:textColor="@android:color/white" />
 
-    <Button
-        android:id="@+id/answerButton3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/answerButton2"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        android:text="Answer 3" />
+        <Button
+            android:id="@+id/answerButton2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_columnWeight="1"
+            android:background="@drawable/button_background"
+            android:text="Answer 2"
+            android:textColor="@android:color/white" />
 
-    <Button
-        android:id="@+id/answerButton4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/answerButton3"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        android:text="Answer 4" />
+        <Button
+            android:id="@+id/answerButton3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_columnWeight="1"
+            android:background="@drawable/button_background"
+            android:text="Answer 3"
+            android:textColor="@android:color/white" />
+
+        <Button
+            android:id="@+id/answerButton4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_columnWeight="1"
+            android:background="@drawable/button_background"
+            android:text="Answer 4"
+            android:textColor="@android:color/white" />
+
+    </GridLayout>
 
     <Button
         android:id="@+id/nextButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/answerButton4"
+        android:layout_below="@id/answerGrid"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:text="Next" />
+        android:text="Next"
+        android:background="@drawable/button_background"
+        android:textColor="@android:color/white" />
+
+    <TextView
+        android:id="@+id/correctAnswersTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/nextButton"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="50dp"
+        android:text="✔️ 0"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/holo_green_dark" />
+
+    <TextView
+        android:id="@+id/wrongAnswersTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@id/nextButton"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="50dp"
+        android:text="❌ 0"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/holo_red_dark" />
+
+    <TextView
+        android:id="@+id/timerTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/nextButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:text="Time left: 30"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black" />
 
 </RelativeLayout>
