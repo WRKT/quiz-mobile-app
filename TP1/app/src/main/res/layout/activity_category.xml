@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CategoryActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textSize="32dp"
+            android:textStyle="bold"
+            android:text="Categorie Quizz" />
+
+        <Button
+            android:id="@+id/videoGamesButton"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="Jeux-vidéos" />
+
+        <Button
+            android:id="@+id/cinemaButton"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Cinéma" />
+
+        <Button
+            android:id="@+id/sportButton"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Sport" />
+
+        <Button
+            android:id="@+id/mathsButton"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Mathématiques" />
+
+        <Button
+            android:id="@+id/musicButton"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Musique" />
+
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".QuizActivity">
+
+    <TextView
+        android:id="@+id/questionTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:text="Question?"
+        android:textSize="24dp" />
+
+    <Button
+        android:id="@+id/answerButton1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/questionTextView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="Answer 1" />
+
+    <Button
+        android:id="@+id/answerButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/answerButton1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="Answer 2" />
+
+    <Button
+        android:id="@+id/answerButton3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/answerButton2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="Answer 3" />
+
+    <Button
+        android:id="@+id/answerButton4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/answerButton3"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="Answer 4" />
+
+    <Button
+        android:id="@+id/nextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/answerButton4"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="Next" />
+
+</RelativeLayout>
