@@ -27,6 +27,7 @@
 
     <Button
         android:id="@+id/loginButton"
+        android:background="@drawable/button_background"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
