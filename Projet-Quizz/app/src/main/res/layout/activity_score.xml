@@ -3,39 +3,40 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ScoreActivity"
-    android:padding="16dp">
+    android:padding="16dp"
+    tools:context=".ScoreActivity">
+
+    <TextView
+        android:id="@+id/playerNameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:text="Votre score est :"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/scoreTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/playerNameTextView"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
-        android:text="Score"
+        android:layout_marginTop="20dp"
+        android:text="✔️ 0, ❌ 0"
+        android:textColor="@android:color/black"
         android:textSize="24sp"
-        android:textStyle="bold"
-        android:textColor="@android:color/black" />
+        android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/bestScoresTextView"
+    <Button
+        android:id="@+id/backToCategoryButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/scoreTextView"
-        android:layout_marginTop="20dp"
-        android:text="Best Scores"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        android:textColor="@android:color/black" />
-
-    <Button
-        android:id="@+id/backToLoginButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/bestScoresTextView"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:text="Back to Login"
+        android:layout_marginTop="40dp"
         android:background="@drawable/button_background"
+        android:text="Back to Categories"
         android:textColor="@android:color/white" />
 </RelativeLayout>

@@ -12,27 +12,27 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="200dp"
+        android:text="@string/welcome"
         android:textAlignment="center"
         android:textSize="30dp"
-        android:textStyle="bold"
-        android:text="@string/welcome" />
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/usernameInput"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:inputType="text"
-        android:hint="@string/enter_username" />
+        android:hint="@string/enter_username"
+        android:inputType="text" />
 
     <Button
         android:id="@+id/loginButton"
-        android:background="@drawable/button_background"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
         android:layout_below="@id/usernameInput"
+        android:layout_centerInParent="true"
         android:layout_marginTop="10dp"
+        android:background="@drawable/button_background"
         android:text="@string/login" />
 
 </RelativeLayout>

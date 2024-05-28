@@ -15,24 +15,18 @@ class ScoreActivity : AppCompatActivity() {
 
         val correctAnswers = intent.getIntExtra("CORRECT_ANSWERS", 0)
         val wrongAnswers = intent.getIntExtra("WRONG_ANSWERS", 0)
-        val scoreTextView = findViewById<TextView>(R.id.scoreTextView)
-        val bestScoresTextView = findViewById<TextView>(R.id.bestScoresTextView)
+        val username = intent.getStringExtra("USERNAME") ?: "Player"
 
+        val scoreTextView = findViewById<TextView>(R.id.scoreTextView)
+        val playerNameTextView = findViewById<TextView>(R.id.playerNameTextView)
+
+        playerNameTextView.text = "Votre score est :"
         scoreTextView.text = "✔️ $correctAnswers, ❌ $wrongAnswers"
 
-        val prefs = getSharedPreferences("quiz_scores", Context.MODE_PRIVATE)
-        val username = intent.getStringExtra("USERNAME")
-        val category = intent.getStringExtra("CATEGORY")
-
-        val bestScores = prefs.all.filterKeys { it.startsWith(username ?: "") }
-        val sortedBestScores = bestScores.entries.sortedByDescending { it.value as Int }
-
-        val bestScoresText = sortedBestScores.joinToString("\n") { "${it.key}: ${it.value}" }
-        bestScoresTextView.text = bestScoresText
-
-        val backToLoginButton = findViewById<Button>(R.id.backToLoginButton)
-        backToLoginButton.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
+        val backToCategoryButton = findViewById<Button>(R.id.backToCategoryButton)
+        backToCategoryButton.setOnClickListener {
+            val intent = Intent(this, CategoryActivity::class.java)
+            intent.putExtra("USERNAME", username)
             startActivity(intent)
             finish()
         }

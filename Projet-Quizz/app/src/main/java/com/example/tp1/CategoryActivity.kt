@@ -10,7 +10,7 @@ class CategoryActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_category)
 
-        val username = intent.getStringExtra("USERNAME")
+        val username = intent.getStringExtra("USERNAME") ?: "Player"
 
         val videoGamesButton = findViewById<Button>(R.id.videoGamesButton)
         val cinemaButton = findViewById<Button>(R.id.cinemaButton)
@@ -19,28 +19,29 @@ class CategoryActivity : AppCompatActivity() {
         val musicButton = findViewById<Button>(R.id.musicButton)
 
         videoGamesButton.setOnClickListener {
-            startQuizActivity("videoGames")
+            startQuizActivity(username, "videoGames")
         }
 
         cinemaButton.setOnClickListener {
-            startQuizActivity("cinema")
+            startQuizActivity(username, "cinema")
         }
 
         sportButton.setOnClickListener {
-            startQuizActivity("sport")
+            startQuizActivity(username, "sport")
         }
 
         mathButton.setOnClickListener {
-            startQuizActivity("maths")
+            startQuizActivity(username, "maths")
         }
 
         musicButton.setOnClickListener {
-            startQuizActivity("music")
+            startQuizActivity(username, "music")
         }
     }
 
-    private fun startQuizActivity(category: String) {
+    private fun startQuizActivity(username: String, category: String) {
         val intent = Intent(this, QuizzActivity::class.java)
+        intent.putExtra("USERNAME", username)
         intent.putExtra("CATEGORY", category)
         startActivity(intent)
     }
