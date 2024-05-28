@@ -1,6 +1,5 @@
 package com.example.tp1
 
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.os.CountDownTimer
@@ -20,7 +19,7 @@ class QuizzActivity : AppCompatActivity() {
     private lateinit var timerTextView: TextView
     private lateinit var countDownTimer: CountDownTimer
 
-    private val questionRepository: QuestionRepository = QuizQuestionRepository()
+    private val questionRepository: QuestionRepository = QuizzQuestionRepository()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
