@@ -1,6 +1,6 @@
 package com.example.tp1
 
-class QuizzQuestionRepository : QuestionRepository {
+class QuizQuestionRepository : QuestionRepository {
     override fun getQuestionsForCategory(category: String): List<Question> {
         return when (category) {
             "videoGames" -> videoGamesQuestions()

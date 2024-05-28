@@ -21,11 +21,11 @@ class QuizzActivity : AppCompatActivity() {
     private lateinit var username: String
     private lateinit var category: String
 
-    private val questionRepository: QuestionRepository = QuizzQuestionRepository()
+    private val questionRepository: QuestionRepository = QuizQuestionRepository()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_quizz)
+        setContentView(R.layout.activity_quiz)
 
         correctAnswersTextView = findViewById(R.id.correctAnswersTextView)
         wrongAnswersTextView = findViewById(R.id.wrongAnswersTextView)

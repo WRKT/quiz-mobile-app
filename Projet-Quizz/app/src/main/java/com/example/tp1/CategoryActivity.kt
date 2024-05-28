@@ -17,6 +17,7 @@ class CategoryActivity : AppCompatActivity() {
         val sportButton = findViewById<Button>(R.id.sportButton)
         val mathButton = findViewById<Button>(R.id.mathsButton)
         val musicButton = findViewById<Button>(R.id.musicButton)
+        val logoutButton = findViewById<Button>(R.id.logoutButton)
 
         videoGamesButton.setOnClickListener {
             startQuizActivity(username, "videoGames")
@@ -36,6 +37,12 @@ class CategoryActivity : AppCompatActivity() {
 
         musicButton.setOnClickListener {
             startQuizActivity(username, "music")
+        }
+
+        logoutButton.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+            finish()
         }
     }
 

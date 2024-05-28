@@ -11,11 +11,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
-        android:text="placeHolder"
+        android:layout_marginTop="200dp"
+        android:text="Pseudo: Player"
         android:textColor="@android:color/black"
-        android:textSize="24sp"
-        android:textStyle="bold" />
+        android:textSize="18sp"
+        android:textStyle="normal" />
 
     <TextView
         android:id="@+id/scoreTextView"
@@ -23,9 +23,42 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/playerNameTextView"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="20dp"
         android:textColor="@android:color/black"
-        android:textSize="24sp"
+        android:textSize="32sp"
         android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/detailsTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/scoreTextView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:textSize="20sp"
+        android:textStyle="normal" />
+
+    <Button
+        android:id="@+id/backToCategoryButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/detailsTextView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/button_background"
+        android:text="Back to Category"
+        android:textColor="@android:color/white" />
+
+    <Button
+        android:id="@+id/showLeaderboardButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/backToCategoryButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="Show Leaderboard"
+        android:background="@drawable/button_background"
+        android:textColor="@android:color/white"/>
+
 
 </RelativeLayout>
