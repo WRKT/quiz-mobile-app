@@ -18,6 +18,8 @@ class QuizzActivity : AppCompatActivity() {
     private lateinit var wrongAnswersTextView: TextView
     private lateinit var timerTextView: TextView
     private lateinit var countDownTimer: CountDownTimer
+    private lateinit var username: String
+    private lateinit var category: String
 
     private val questionRepository: QuestionRepository = QuizzQuestionRepository()
 
@@ -29,8 +31,8 @@ class QuizzActivity : AppCompatActivity() {
         wrongAnswersTextView = findViewById(R.id.wrongAnswersTextView)
         timerTextView = findViewById(R.id.timerTextView)
 
-        val username = intent.getStringExtra("USERNAME") ?: "Player"
-        val category = intent.getStringExtra("CATEGORY") ?: "Unknown"
+        username = intent.getStringExtra("USERNAME") ?: "Player"
+        category = intent.getStringExtra("CATEGORY") ?: "Unknown"
         questions = questionRepository.getQuestionsForCategory(category)
 
         showNextQuestion()
@@ -102,8 +104,8 @@ class QuizzActivity : AppCompatActivity() {
 
     private fun showScore() {
         val intent = Intent(this, ScoreActivity::class.java)
-        intent.putExtra("USERNAME", intent.getStringExtra("USERNAME"))
-        intent.putExtra("CATEGORY", intent.getStringExtra("CATEGORY"))
+        intent.putExtra("USERNAME", username)
+        intent.putExtra("CATEGORY", category)
         intent.putExtra("CORRECT_ANSWERS", correctAnswers)
         intent.putExtra("WRONG_ANSWERS", wrongAnswers)
         startActivity(intent)
