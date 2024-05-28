@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
     tools:context=".ScoreActivity">
 
     <TextView
@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
-        android:text="Votre score est :"
+        android:text="placeHolder"
         android:textColor="@android:color/black"
         android:textSize="24sp"
         android:textStyle="bold" />
@@ -23,20 +23,9 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/playerNameTextView"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:text="✔️ 0, ❌ 0"
+        android:layout_marginTop="50dp"
         android:textColor="@android:color/black"
         android:textSize="24sp"
         android:textStyle="bold" />
 
-    <Button
-        android:id="@+id/backToCategoryButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/scoreTextView"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp"
-        android:background="@drawable/button_background"
-        android:text="Back to Categories"
-        android:textColor="@android:color/white" />
 </RelativeLayout>
