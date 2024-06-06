@@ -11,14 +11,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:layout_marginTop="50dp"
         android:paddingBottom="16dp"
-        android:text="Leaderboard"
+        android:text="LEADERBOARD"
         android:textSize="24sp"
         android:textStyle="bold" />
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="609dp"
+        android:layout_height="600dp"
         android:layout_weight="1">
 
         <LinearLayout
