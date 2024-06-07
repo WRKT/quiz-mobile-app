@@ -15,7 +15,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Categorie Quiz"
+            android:text="Categorie Quizz"
             android:textAlignment="center"
             android:textSize="32dp"
             android:textStyle="bold" />

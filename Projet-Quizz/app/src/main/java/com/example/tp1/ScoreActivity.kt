@@ -16,11 +16,12 @@ class ScoreActivity : AppCompatActivity() {
 
         val correctAnswers = intent.getIntExtra("CORRECT_ANSWERS", 0)
         val wrongAnswers = intent.getIntExtra("WRONG_ANSWERS", 0)
-        val username = intent.getStringExtra("USERNAME") ?: "Player"
         val category = intent.getStringExtra("CATEGORY") ?: "Unknown"
 
+        val prefs = getSharedPreferences("quiz_app", Context.MODE_PRIVATE)
+        val username = prefs.getString("USERNAME", "Player") ?: "Player"
+
         // Save the score in SharedPreferences
-        val prefs = getSharedPreferences("quiz_scores", Context.MODE_PRIVATE)
         val editor = prefs.edit()
         val key = "${username}_${category}_highScore"
         editor.putInt(key, correctAnswers)
@@ -41,14 +42,12 @@ class ScoreActivity : AppCompatActivity() {
 
         backToCategoriesButton.setOnClickListener {
             val intent = Intent(this, CategoryActivity::class.java)
-            intent.putExtra("USERNAME", username)
             startActivity(intent)
             finish()
         }
 
         showLeaderboardButton.setOnClickListener {
             val intent = Intent(this, LeaderboardActivity::class.java)
-            intent.putExtra("USERNAME", username)
             intent.putExtra("CATEGORY", category)
             startActivity(intent)
         }
