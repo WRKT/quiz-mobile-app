@@ -18,7 +18,7 @@ class LeaderboardActivity : AppCompatActivity() {
         val category = intent.getStringExtra("CATEGORY") ?: "Unknown"
         val leaderboardLayout = findViewById<LinearLayout>(R.id.leaderboardLayout)
 
-        val prefs = getSharedPreferences("quiz_scores", Context.MODE_PRIVATE)
+        val prefs = getSharedPreferences("quiz_app", Context.MODE_PRIVATE)
         val scores = prefs.all.filterKeys { it.endsWith("_${category}_highScore") }
             .map { it.key.removeSuffix("_${category}_highScore") to it.value as Int }
             .sortedByDescending { it.second }

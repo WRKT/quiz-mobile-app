@@ -34,9 +34,9 @@ class ScoreActivity : AppCompatActivity() {
         val backToCategoriesButton = findViewById<Button>(R.id.backToCategoryButton)
         val showLeaderboardButton = findViewById<Button>(R.id.showLeaderboardButton)
 
-        playerNameTextView.text = "Pseudo: $username"
+        playerNameTextView.text = "\uD83D\uDC64 $username"
         scoreTextView.text = "Score: $correctAnswers/10"
-        detailsTextView.text = "✔\uFE0F $correctAnswers            ❌ $wrongAnswers"
+        detailsTextView.text = "✔️ $correctAnswers            ❌ $wrongAnswers"
 
         backToCategoriesButton.setOnClickListener {
             val intent = Intent(this, CategoryActivity::class.java)
