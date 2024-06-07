@@ -6,41 +6,64 @@ import android.os.CountDownTimer
 import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
-class QuizzActivity : AppCompatActivity() {
+class QuizActivity : AppCompatActivity() {
 
+    private lateinit var quizRepository: QuizRepository
+    private lateinit var questions: List<Question>
     private var currentQuestionIndex = 0
     private var correctAnswers = 0
     private var wrongAnswers = 0
 
-    private lateinit var questions: List<Question>
+    private lateinit var questionNumberView: TextView
+    private lateinit var questionTextView: TextView
+    private lateinit var answerButton1: Button
+    private lateinit var answerButton2: Button
+    private lateinit var answerButton3: Button
+    private lateinit var answerButton4: Button
+    private lateinit var nextButton: Button
     private lateinit var correctAnswersTextView: TextView
     private lateinit var wrongAnswersTextView: TextView
     private lateinit var timerTextView: TextView
     private lateinit var countDownTimer: CountDownTimer
-    private lateinit var username: String
-    private lateinit var category: String
-
-    private val questionRepository: QuestionRepository = QuizQuestionRepository()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_quiz)
 
+        quizRepository = QuizRepository(QuizDatabase.getDatabase(this))
+
+        questionNumberView = findViewById(R.id.questionNumberView)
+        questionTextView = findViewById(R.id.questionTextView)
+        answerButton1 = findViewById(R.id.answerButton1)
+        answerButton2 = findViewById(R.id.answerButton2)
+        answerButton3 = findViewById(R.id.answerButton3)
+        answerButton4 = findViewById(R.id.answerButton4)
+        nextButton = findViewById(R.id.nextButton)
         correctAnswersTextView = findViewById(R.id.correctAnswersTextView)
         wrongAnswersTextView = findViewById(R.id.wrongAnswersTextView)
         timerTextView = findViewById(R.id.timerTextView)
 
-        username = intent.getStringExtra("USERNAME") ?: "Player"
-        category = intent.getStringExtra("CATEGORY") ?: "Unknown"
-        questions = questionRepository.getQuestionsForCategory(category)
+        val category = intent.getStringExtra("CATEGORY") ?: "Unknown"
+        loadQuestions(category)
 
-        showNextQuestion()
-
-        val nextButton = findViewById<Button>(R.id.nextButton)
         nextButton.setOnClickListener {
             countDownTimer.cancel()
             showNextQuestion()
+        }
+    }
+
+    private fun loadQuestions(category: String) {
+        CoroutineScope(Dispatchers.IO).launch {
+            val categoryId = quizRepository.getCategoryIdByName(category)
+            questions = quizRepository.getQuestionsForCategory(categoryId).shuffled().take(10)
+            withContext(Dispatchers.Main) {
+                showNextQuestion()
+            }
         }
     }
 
@@ -52,24 +75,26 @@ class QuizzActivity : AppCompatActivity() {
 
         val question = questions[currentQuestionIndex]
         val questionNumber = currentQuestionIndex + 1
-        val questionNumberView = findViewById<TextView>(R.id.questionNumberView)
-        val questionTextView = findViewById<TextView>(R.id.questionTextView)
-
         questionNumberView.text = "💡 Question $questionNumber"
         questionTextView.text = question.text
 
-        val answerButtons = listOf<Button>(
-            findViewById(R.id.answerButton1),
-            findViewById(R.id.answerButton2),
-            findViewById(R.id.answerButton3),
-            findViewById(R.id.answerButton4)
-        )
+        CoroutineScope(Dispatchers.IO).launch {
+            val answers = quizRepository.getAnswersForQuestion(question.id).shuffled()
+            withContext(Dispatchers.Main) {
+                setAnswerButtons(answers, question)
+                startTimer()
+                currentQuestionIndex++
+            }
+        }
+    }
 
-        question.answers.shuffled().forEachIndexed { index, answer ->
-            answerButtons[index].text = answer
-            answerButtons[index].setOnClickListener {
+    private fun setAnswerButtons(answers: List<Answer>, question: Question) {
+        val buttons = listOf(answerButton1, answerButton2, answerButton3, answerButton4)
+        buttons.forEachIndexed { index, button ->
+            button.text = answers.getOrNull(index)?.text ?: ""
+            button.setOnClickListener {
                 countDownTimer.cancel()
-                if (answer == question.correctAnswer) {
+                if (button.text == question.correctAnswer) {
                     correctAnswers++
                 } else {
                     wrongAnswers++
@@ -78,9 +103,6 @@ class QuizzActivity : AppCompatActivity() {
                 showNextQuestion()
             }
         }
-
-        startTimer()
-        currentQuestionIndex++
     }
 
     private fun startTimer() {
@@ -104,13 +126,11 @@ class QuizzActivity : AppCompatActivity() {
 
     private fun showScore() {
         val intent = Intent(this, ScoreActivity::class.java)
-        intent.putExtra("USERNAME", username)
-        intent.putExtra("CATEGORY", category)
+        intent.putExtra("USERNAME", intent.getStringExtra("USERNAME"))
+        intent.putExtra("CATEGORY", intent.getStringExtra("CATEGORY"))
         intent.putExtra("CORRECT_ANSWERS", correctAnswers)
         intent.putExtra("WRONG_ANSWERS", wrongAnswers)
         startActivity(intent)
         finish()
     }
 }
-
-data class Question(val text: String, val correctAnswer: String, val answers: List<String>)
