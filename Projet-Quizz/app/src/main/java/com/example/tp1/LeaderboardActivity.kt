@@ -29,11 +29,11 @@ class LeaderboardActivity : AppCompatActivity() {
             Log.d("LeaderboardActivity", "No scores found for category: $category")
         }
 
-        scores.forEach { (username, score) ->
+        scores.forEachIndexed { index, (username, score) ->
             val textView = TextView(this)
-            textView.text = "$username: $score"
+            textView.text = "${index + 1}. $username: $score"
             textView.textSize = 18f
-            textView.setPadding(10, 10, 10, 10)
+            textView.setPadding(50, 10, 10, 10)
             leaderboardLayout.addView(textView)
         }
 
@@ -48,3 +48,4 @@ class LeaderboardActivity : AppCompatActivity() {
         finish()
     }
 }
+
