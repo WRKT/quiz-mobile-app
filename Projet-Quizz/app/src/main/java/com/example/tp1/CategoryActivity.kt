@@ -1,5 +1,6 @@
 package com.example.tp1
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
@@ -19,8 +20,6 @@ class CategoryActivity : AppCompatActivity() {
 
         quizRepository = QuizRepository(QuizDatabase.getDatabase(this))
 
-        val username = intent.getStringExtra("USERNAME") ?: "Player"
-
         val videoGamesButton = findViewById<Button>(R.id.videoGamesButton)
         val cinemaButton = findViewById<Button>(R.id.cinemaButton)
         val sportButton = findViewById<Button>(R.id.sportButton)
@@ -28,11 +27,11 @@ class CategoryActivity : AppCompatActivity() {
         val musicButton = findViewById<Button>(R.id.musicButton)
         val logoutButton = findViewById<Button>(R.id.logoutButton)
 
-        setupButton(videoGamesButton, username, "videoGames")
-        setupButton(cinemaButton, username, "cinema")
-        setupButton(sportButton, username, "sport")
-        setupButton(mathButton, username, "maths")
-        setupButton(musicButton, username, "music")
+        setupButton(videoGamesButton, "videoGames")
+        setupButton(cinemaButton, "cinema")
+        setupButton(sportButton, "sport")
+        setupButton(mathButton, "maths")
+        setupButton(musicButton, "music")
 
         logoutButton.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
@@ -41,14 +40,14 @@ class CategoryActivity : AppCompatActivity() {
         }
     }
 
-    private fun setupButton(button: Button, username: String, categoryName: String) {
+    private fun setupButton(button: Button, categoryName: String) {
         CoroutineScope(Dispatchers.IO).launch {
             val category = quizRepository.getCategoryIdByName(categoryName)
             withContext(Dispatchers.Main) {
                 if (category != null) {
                     button.text = mapCategoryNameToDisplayName(categoryName)
                     button.setOnClickListener {
-                        startQuizActivity(username, categoryName)
+                        startQuizActivity(categoryName)
                     }
                 } else {
                     button.isEnabled = false
@@ -57,9 +56,8 @@ class CategoryActivity : AppCompatActivity() {
         }
     }
 
-    private fun startQuizActivity(username: String, category: String) {
+    private fun startQuizActivity(category: String) {
         val intent = Intent(this, QuizActivity::class.java)
-        intent.putExtra("USERNAME", username)
         intent.putExtra("CATEGORY", category)
         startActivity(intent)
     }

@@ -21,13 +21,11 @@ class ScoreActivity : AppCompatActivity() {
         val prefs = getSharedPreferences("quiz_app", Context.MODE_PRIVATE)
         val username = prefs.getString("USERNAME", "Player") ?: "Player"
 
-        // Save the score in SharedPreferences
         val editor = prefs.edit()
         val key = "${username}_${category}_highScore"
         editor.putInt(key, correctAnswers)
         editor.apply()
 
-        // Log for debugging
         Log.d("ScoreActivity", "Saved score: $correctAnswers for user: $username in category: $category")
 
         val playerNameTextView = findViewById<TextView>(R.id.playerNameTextView)
@@ -38,7 +36,7 @@ class ScoreActivity : AppCompatActivity() {
 
         playerNameTextView.text = "Pseudo: $username"
         scoreTextView.text = "Score: $correctAnswers/10"
-        detailsTextView.text = "Correcte: $correctAnswers - Fausse: $wrongAnswers"
+        detailsTextView.text = "✔\uFE0F $correctAnswers            ❌ $wrongAnswers"
 
         backToCategoriesButton.setOnClickListener {
             val intent = Intent(this, CategoryActivity::class.java)
