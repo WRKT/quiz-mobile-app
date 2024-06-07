@@ -26,7 +26,10 @@ class ScoreActivity : AppCompatActivity() {
         editor.putInt(key, correctAnswers)
         editor.apply()
 
-        Log.d("ScoreActivity", "Saved score: $correctAnswers for user: $username in category: $category")
+        Log.d(
+            "ScoreActivity",
+            "Saved score: $correctAnswers for user: $username in category: $category"
+        )
 
         val playerNameTextView = findViewById<TextView>(R.id.playerNameTextView)
         val scoreTextView = findViewById<TextView>(R.id.scoreTextView)

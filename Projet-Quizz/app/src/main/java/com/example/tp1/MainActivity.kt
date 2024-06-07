@@ -61,25 +61,101 @@ class MainActivity : AppCompatActivity() {
         quizRepository.insertCategories(categories)
 
         val videoGamesQuestions = listOf(
-            Question(categoryId = 1, text = "Quelle année est sorti le premier jeu de la série 'The Legend of Zelda'?", correctAnswer = "1986"),
-            Question(categoryId = 1, text = "Qui est le créateur de la série de jeux 'Super Mario'?", correctAnswer = "Shigeru Miyamoto"),
-            Question(categoryId = 1, text = "Dans quel jeu vidéo trouve-t-on le personnage de Lara Croft?", correctAnswer = "Tomb Raider"),
-            Question(categoryId = 1, text = "Quel est le jeu vidéo le plus vendu de tous les temps?", correctAnswer = "Minecraft"),
-            Question(categoryId = 1, text = "En quelle année est sorti le premier jeu 'Call of Duty'?", correctAnswer = "2003"),
-            Question(categoryId = 1, text = "Quel est le studio de développement derrière 'The Witcher 3'?", correctAnswer = "CD Projekt Red"),
-            Question(categoryId = 1, text = "Quel est le nom du protagoniste dans 'Halo'?", correctAnswer = "Master Chief"),
-            Question(categoryId = 1, text = "Quelle console a été la première à utiliser des CD-ROM?", correctAnswer = "PlayStation"),
-            Question(categoryId = 1, text = "Qui est l'éditeur du jeu 'Fortnite'?", correctAnswer = "Epic Games"),
-            Question(categoryId = 1, text = "Quel jeu vidéo a popularisé le genre Battle Royale?", correctAnswer = "PUBG"),
-            Question(categoryId = 1, text = "Quel personnage de jeu vidéo est célèbre pour ses aventures dans 'Hyrule'?", correctAnswer = "Link"),
-            Question(categoryId = 1, text = "Quel est le principal antagoniste dans 'Final Fantasy VII'?", correctAnswer = "Sephiroth"),
-            Question(categoryId = 1, text = "Quel jeu vidéo se déroule dans la ville fictive de 'Vice City'?", correctAnswer = "GTA Vice City"),
-            Question(categoryId = 1, text = "Quel est le nom du compagnon de Sonic?", correctAnswer = "Tails"),
-            Question(categoryId = 1, text = "Quel jeu de combat met en scène des personnages comme Ryu et Ken?", correctAnswer = "Street Fighter"),
-            Question(categoryId = 1, text = "Quelle est la première console de jeux vidéo de Nintendo?", correctAnswer = "Nintendo NES"),
-            Question(categoryId = 1, text = "Quel jeu met en scène un plombier essayant de sauver une princesse?", correctAnswer = "Super Mario Bros"),
-            Question(categoryId = 1, text = "Quel est le personnage principal de 'Metal Gear Solid'?", correctAnswer = "Solid Snake"),
-            Question(categoryId = 1, text = "Quel est le jeu vidéo le plus vendu sur la Nintendo Switch?", correctAnswer = "Mario Kart 8 Deluxe")
+            Question(
+                categoryId = 1,
+                text = "Quelle année est sorti le premier jeu de la série 'The Legend of Zelda'?",
+                correctAnswer = "1986"
+            ),
+            Question(
+                categoryId = 1,
+                text = "Qui est le créateur de la série de jeux 'Super Mario'?",
+                correctAnswer = "Shigeru Miyamoto"
+            ),
+            Question(
+                categoryId = 1,
+                text = "Dans quel jeu vidéo trouve-t-on le personnage de Lara Croft?",
+                correctAnswer = "Tomb Raider"
+            ),
+            Question(
+                categoryId = 1,
+                text = "Quel est le jeu vidéo le plus vendu de tous les temps?",
+                correctAnswer = "Minecraft"
+            ),
+            Question(
+                categoryId = 1,
+                text = "En quelle année est sorti le premier jeu 'Call of Duty'?",
+                correctAnswer = "2003"
+            ),
+            Question(
+                categoryId = 1,
+                text = "Quel est le studio de développement derrière 'The Witcher 3'?",
+                correctAnswer = "CD Projekt Red"
+            ),
+            Question(
+                categoryId = 1,
+                text = "Quel est le nom du protagoniste dans 'Halo'?",
+                correctAnswer = "Master Chief"
+            ),
+            Question(
+                categoryId = 1,
+                text = "Quelle console a été la première à utiliser des CD-ROM?",
+                correctAnswer = "PlayStation"
+            ),
+            Question(
+                categoryId = 1,
+                text = "Qui est l'éditeur du jeu 'Fortnite'?",
+                correctAnswer = "Epic Games"
+            ),
+            Question(
+                categoryId = 1,
+                text = "Quel jeu vidéo a popularisé le genre Battle Royale?",
+                correctAnswer = "PUBG"
+            ),
+            Question(
+                categoryId = 1,
+                text = "Quel personnage de jeu vidéo est célèbre pour ses aventures dans 'Hyrule'?",
+                correctAnswer = "Link"
+            ),
+            Question(
+                categoryId = 1,
+                text = "Quel est le principal antagoniste dans 'Final Fantasy VII'?",
+                correctAnswer = "Sephiroth"
+            ),
+            Question(
+                categoryId = 1,
+                text = "Quel jeu vidéo se déroule dans la ville fictive de 'Vice City'?",
+                correctAnswer = "GTA Vice City"
+            ),
+            Question(
+                categoryId = 1,
+                text = "Quel est le nom du compagnon de Sonic?",
+                correctAnswer = "Tails"
+            ),
+            Question(
+                categoryId = 1,
+                text = "Quel jeu de combat met en scène des personnages comme Ryu et Ken?",
+                correctAnswer = "Street Fighter"
+            ),
+            Question(
+                categoryId = 1,
+                text = "Quelle est la première console de jeux vidéo de Nintendo?",
+                correctAnswer = "Nintendo NES"
+            ),
+            Question(
+                categoryId = 1,
+                text = "Quel jeu met en scène un plombier essayant de sauver une princesse?",
+                correctAnswer = "Super Mario Bros"
+            ),
+            Question(
+                categoryId = 1,
+                text = "Quel est le personnage principal de 'Metal Gear Solid'?",
+                correctAnswer = "Solid Snake"
+            ),
+            Question(
+                categoryId = 1,
+                text = "Quel est le jeu vidéo le plus vendu sur la Nintendo Switch?",
+                correctAnswer = "Mario Kart 8 Deluxe"
+            )
         )
         quizRepository.insertQuestions(videoGamesQuestions)
 
@@ -164,25 +240,101 @@ class MainActivity : AppCompatActivity() {
         quizRepository.insertAnswers(videoGamesAnswers)
 
         val cinemaQuestions = listOf(
-            Question(categoryId = 2, text = "Qui a réalisé le film 'Inception'?", correctAnswer = "Christopher Nolan"),
-            Question(categoryId = 2, text = "Quel acteur joue le personnage de Jack Dawson dans 'Titanic'?", correctAnswer = "Leonardo DiCaprio"),
-            Question(categoryId = 2, text = "En quelle année est sorti le premier film de la saga 'Harry Potter'?", correctAnswer = "2001"),
-            Question(categoryId = 2, text = "Qui a joué le rôle de 'Joker' dans 'The Dark Knight'?", correctAnswer = "Heath Ledger"),
-            Question(categoryId = 2, text = "Quel film a remporté l'Oscar du meilleur film en 2020?", correctAnswer = "Parasite"),
-            Question(categoryId = 2, text = "Qui a réalisé le film 'Pulp Fiction'?", correctAnswer = "Quentin Tarantino"),
-            Question(categoryId = 2, text = "Quel film met en scène un groupe de super-héros appelés 'The Avengers'?", correctAnswer = "The Avengers"),
-            Question(categoryId = 2, text = "Quel acteur a joué le rôle principal dans 'Forrest Gump'?", correctAnswer = "Tom Hanks"),
-            Question(categoryId = 2, text = "Quel film est célèbre pour la réplique 'May the Force be with you'?", correctAnswer = "Star Wars"),
-            Question(categoryId = 2, text = "Qui a réalisé le film 'Jaws'?", correctAnswer = "Steven Spielberg"),
-            Question(categoryId = 2, text = "Quel est le nom du premier film de la série 'Indiana Jones'?", correctAnswer = "Raiders of the Lost Ark"),
-            Question(categoryId = 2, text = "Quel film a pour personnage principal un robot nommé WALL-E?", correctAnswer = "WALL-E"),
-            Question(categoryId = 2, text = "Quel film d'animation met en scène une famille de super-héros?", correctAnswer = "The Incredibles"),
-            Question(categoryId = 2, text = "Qui a joué le rôle principal dans le film 'Gladiator'?", correctAnswer = "Russell Crowe"),
-            Question(categoryId = 2, text = "Quel film est basé sur les romans de J.R.R. Tolkien?", correctAnswer = "The Lord of the Rings"),
-            Question(categoryId = 2, text = "Quel film de science-fiction met en scène des machines appelées 'Terminators'?", correctAnswer = "The Terminator"),
-            Question(categoryId = 2, text = "Quel film a pour personnage principal un homme nommé Neo?", correctAnswer = "The Matrix"),
-            Question(categoryId = 2, text = "Quel film d'animation raconte l'histoire d'une fourmi nommée Flik?", correctAnswer = "A Bug's Life"),
-            Question(categoryId = 2, text = "Quel film de Quentin Tarantino met en scène un mariage interrompu par une fusillade?", correctAnswer = "Kill Bill")
+            Question(
+                categoryId = 2,
+                text = "Qui a réalisé le film 'Inception'?",
+                correctAnswer = "Christopher Nolan"
+            ),
+            Question(
+                categoryId = 2,
+                text = "Quel acteur joue le personnage de Jack Dawson dans 'Titanic'?",
+                correctAnswer = "Leonardo DiCaprio"
+            ),
+            Question(
+                categoryId = 2,
+                text = "En quelle année est sorti le premier film de la saga 'Harry Potter'?",
+                correctAnswer = "2001"
+            ),
+            Question(
+                categoryId = 2,
+                text = "Qui a joué le rôle de 'Joker' dans 'The Dark Knight'?",
+                correctAnswer = "Heath Ledger"
+            ),
+            Question(
+                categoryId = 2,
+                text = "Quel film a remporté l'Oscar du meilleur film en 2020?",
+                correctAnswer = "Parasite"
+            ),
+            Question(
+                categoryId = 2,
+                text = "Qui a réalisé le film 'Pulp Fiction'?",
+                correctAnswer = "Quentin Tarantino"
+            ),
+            Question(
+                categoryId = 2,
+                text = "Quel film met en scène un groupe de super-héros appelés 'The Avengers'?",
+                correctAnswer = "The Avengers"
+            ),
+            Question(
+                categoryId = 2,
+                text = "Quel acteur a joué le rôle principal dans 'Forrest Gump'?",
+                correctAnswer = "Tom Hanks"
+            ),
+            Question(
+                categoryId = 2,
+                text = "Quel film est célèbre pour la réplique 'May the Force be with you'?",
+                correctAnswer = "Star Wars"
+            ),
+            Question(
+                categoryId = 2,
+                text = "Qui a réalisé le film 'Jaws'?",
+                correctAnswer = "Steven Spielberg"
+            ),
+            Question(
+                categoryId = 2,
+                text = "Quel est le nom du premier film de la série 'Indiana Jones'?",
+                correctAnswer = "Raiders of the Lost Ark"
+            ),
+            Question(
+                categoryId = 2,
+                text = "Quel film a pour personnage principal un robot nommé WALL-E?",
+                correctAnswer = "WALL-E"
+            ),
+            Question(
+                categoryId = 2,
+                text = "Quel film d'animation met en scène une famille de super-héros?",
+                correctAnswer = "The Incredibles"
+            ),
+            Question(
+                categoryId = 2,
+                text = "Qui a joué le rôle principal dans le film 'Gladiator'?",
+                correctAnswer = "Russell Crowe"
+            ),
+            Question(
+                categoryId = 2,
+                text = "Quel film est basé sur les romans de J.R.R. Tolkien?",
+                correctAnswer = "The Lord of the Rings"
+            ),
+            Question(
+                categoryId = 2,
+                text = "Quel film de science-fiction met en scène des machines appelées 'Terminators'?",
+                correctAnswer = "The Terminator"
+            ),
+            Question(
+                categoryId = 2,
+                text = "Quel film a pour personnage principal un homme nommé Neo?",
+                correctAnswer = "The Matrix"
+            ),
+            Question(
+                categoryId = 2,
+                text = "Quel film d'animation raconte l'histoire d'une fourmi nommée Flik?",
+                correctAnswer = "A Bug's Life"
+            ),
+            Question(
+                categoryId = 2,
+                text = "Quel film de Quentin Tarantino met en scène un mariage interrompu par une fusillade?",
+                correctAnswer = "Kill Bill"
+            )
         )
         quizRepository.insertQuestions(cinemaQuestions)
 
@@ -268,25 +420,101 @@ class MainActivity : AppCompatActivity() {
         quizRepository.insertAnswers(cinemaAnswers)
 
         val sportQuestions = listOf(
-            Question(categoryId = 3, text = "Quel pays a remporté la Coupe du Monde de football en 2018?", correctAnswer = "France"),
-            Question(categoryId = 3, text = "Combien de points faut-il pour gagner un set au tennis?", correctAnswer = "6"),
-            Question(categoryId = 3, text = "Qui est le recordman du monde du 100 mètres en athlétisme?", correctAnswer = "Usain Bolt"),
-            Question(categoryId = 3, text = "Quel joueur de basketball est surnommé 'King James'?", correctAnswer = "LeBron James"),
-            Question(categoryId = 3, text = "Quel pays a remporté le plus de médailles aux Jeux Olympiques d'été?", correctAnswer = "USA"),
-            Question(categoryId = 3, text = "Quel joueur de tennis a remporté le plus de titres du Grand Chelem?", correctAnswer = "Roger Federer"),
-            Question(categoryId = 3, text = "Quelle équipe de football américain a remporté le plus de Super Bowls?", correctAnswer = "New England Patriots"),
-            Question(categoryId = 3, text = "Quel joueur de football a remporté le plus de Ballon d'Or?", correctAnswer = "Lionel Messi"),
-            Question(categoryId = 3, text = "Quel boxeur est surnommé 'The Greatest'?", correctAnswer = "Muhammad Ali"),
-            Question(categoryId = 3, text = "Quel pays a accueilli les Jeux Olympiques d'été en 2016?", correctAnswer = "Brésil"),
-            Question(categoryId = 3, text = "Quel est le sport national du Japon?", correctAnswer = "Sumo"),
-            Question(categoryId = 3, text = "Quel joueur de cricket détient le record du plus grand nombre de runs en Test cricket?", correctAnswer = "Sachin Tendulkar"),
-            Question(categoryId = 3, text = "Quel athlète a remporté le plus de médailles d'or olympiques?", correctAnswer = "Michael Phelps"),
-            Question(categoryId = 3, text = "Quel pays a remporté la Coupe du Monde de rugby en 2019?", correctAnswer = "Afrique du Sud"),
-            Question(categoryId = 3, text = "Quel joueur de baseball est surnommé 'The Sultan of Swat'?", correctAnswer = "Babe Ruth"),
-            Question(categoryId = 3, text = "Quel pays a remporté le plus de Coupes Davis en tennis?", correctAnswer = "USA"),
-            Question(categoryId = 3, text = "Quel joueur de golf a remporté le plus de tournois majeurs?", correctAnswer = "Jack Nicklaus"),
-            Question(categoryId = 3, text = "Quel pays est célèbre pour le hockey sur glace?", correctAnswer = "Canada"),
-            Question(categoryId = 3, text = "Quel pilote de Formule 1 détient le record du plus grand nombre de victoires?", correctAnswer = "Lewis Hamilton")
+            Question(
+                categoryId = 3,
+                text = "Quel pays a remporté la Coupe du Monde de football en 2018?",
+                correctAnswer = "France"
+            ),
+            Question(
+                categoryId = 3,
+                text = "Combien de points faut-il pour gagner un set au tennis?",
+                correctAnswer = "6"
+            ),
+            Question(
+                categoryId = 3,
+                text = "Qui est le recordman du monde du 100 mètres en athlétisme?",
+                correctAnswer = "Usain Bolt"
+            ),
+            Question(
+                categoryId = 3,
+                text = "Quel joueur de basketball est surnommé 'King James'?",
+                correctAnswer = "LeBron James"
+            ),
+            Question(
+                categoryId = 3,
+                text = "Quel pays a remporté le plus de médailles aux Jeux Olympiques d'été?",
+                correctAnswer = "USA"
+            ),
+            Question(
+                categoryId = 3,
+                text = "Quel joueur de tennis a remporté le plus de titres du Grand Chelem?",
+                correctAnswer = "Roger Federer"
+            ),
+            Question(
+                categoryId = 3,
+                text = "Quelle équipe de football américain a remporté le plus de Super Bowls?",
+                correctAnswer = "New England Patriots"
+            ),
+            Question(
+                categoryId = 3,
+                text = "Quel joueur de football a remporté le plus de Ballon d'Or?",
+                correctAnswer = "Lionel Messi"
+            ),
+            Question(
+                categoryId = 3,
+                text = "Quel boxeur est surnommé 'The Greatest'?",
+                correctAnswer = "Muhammad Ali"
+            ),
+            Question(
+                categoryId = 3,
+                text = "Quel pays a accueilli les Jeux Olympiques d'été en 2016?",
+                correctAnswer = "Brésil"
+            ),
+            Question(
+                categoryId = 3,
+                text = "Quel est le sport national du Japon?",
+                correctAnswer = "Sumo"
+            ),
+            Question(
+                categoryId = 3,
+                text = "Quel joueur de cricket détient le record du plus grand nombre de runs en Test cricket?",
+                correctAnswer = "Sachin Tendulkar"
+            ),
+            Question(
+                categoryId = 3,
+                text = "Quel athlète a remporté le plus de médailles d'or olympiques?",
+                correctAnswer = "Michael Phelps"
+            ),
+            Question(
+                categoryId = 3,
+                text = "Quel pays a remporté la Coupe du Monde de rugby en 2019?",
+                correctAnswer = "Afrique du Sud"
+            ),
+            Question(
+                categoryId = 3,
+                text = "Quel joueur de baseball est surnommé 'The Sultan of Swat'?",
+                correctAnswer = "Babe Ruth"
+            ),
+            Question(
+                categoryId = 3,
+                text = "Quel pays a remporté le plus de Coupes Davis en tennis?",
+                correctAnswer = "USA"
+            ),
+            Question(
+                categoryId = 3,
+                text = "Quel joueur de golf a remporté le plus de tournois majeurs?",
+                correctAnswer = "Jack Nicklaus"
+            ),
+            Question(
+                categoryId = 3,
+                text = "Quel pays est célèbre pour le hockey sur glace?",
+                correctAnswer = "Canada"
+            ),
+            Question(
+                categoryId = 3,
+                text = "Quel pilote de Formule 1 détient le record du plus grand nombre de victoires?",
+                correctAnswer = "Lewis Hamilton"
+            )
         )
 
         quizRepository.insertQuestions(sportQuestions)
@@ -372,25 +600,81 @@ class MainActivity : AppCompatActivity() {
         quizRepository.insertAnswers(sportAnswers)
 
         val mathsQuestions = listOf(
-            Question(categoryId = 4, text = "Quel est le nombre premier suivant après 7?", correctAnswer = "11"),
-            Question(categoryId = 4, text = "Quelle est la valeur de Pi approximée à deux décimales?", correctAnswer = "3.14"),
+            Question(
+                categoryId = 4,
+                text = "Quel est le nombre premier suivant après 7?",
+                correctAnswer = "11"
+            ),
+            Question(
+                categoryId = 4,
+                text = "Quelle est la valeur de Pi approximée à deux décimales?",
+                correctAnswer = "3.14"
+            ),
             Question(categoryId = 4, text = "Combien de côtés a un hexagone?", correctAnswer = "6"),
-            Question(categoryId = 4, text = "Combien de faces a un dodécaèdre?", correctAnswer = "12"),
-            Question(categoryId = 4, text = "Quelle est la solution de l'équation 2x + 3 = 7?", correctAnswer = "2"),
+            Question(
+                categoryId = 4,
+                text = "Combien de faces a un dodécaèdre?",
+                correctAnswer = "12"
+            ),
+            Question(
+                categoryId = 4,
+                text = "Quelle est la solution de l'équation 2x + 3 = 7?",
+                correctAnswer = "2"
+            ),
             Question(categoryId = 4, text = "Quelle est la dérivée de x^2?", correctAnswer = "2x"),
-            Question(categoryId = 4, text = "Quel est le nom du plus grand triangle dans un triangle rectangle?", correctAnswer = "Hypoténuse"),
-            Question(categoryId = 4, text = "Combien de zéros y a-t-il dans le nombre un million?", correctAnswer = "6"),
-            Question(categoryId = 4, text = "Quelle est la formule de l'aire d'un cercle?", correctAnswer = "Pi * r^2"),
-            Question(categoryId = 4, text = "Quel est le résultat de 3! (factorielle de 3)?", correctAnswer = "6"),
-            Question(categoryId = 4, text = "Quelle est la valeur de l'angle droit en degrés?", correctAnswer = "90"),
-            Question(categoryId = 4, text = "Quelle est la somme des angles d'un triangle?", correctAnswer = "180"),
-            Question(categoryId = 4, text = "Quel est le nom du point où les axes de coordonnées se rencontrent?", correctAnswer = "Origine"),
-            Question(categoryId = 4, text = "Quelle est la formule de la distance entre deux points (x1, y1) et (x2, y2)?", correctAnswer = "√((x2-x1)^2 + (y2-y1)^2)"),
+            Question(
+                categoryId = 4,
+                text = "Quel est le nom du plus grand triangle dans un triangle rectangle?",
+                correctAnswer = "Hypoténuse"
+            ),
+            Question(
+                categoryId = 4,
+                text = "Combien de zéros y a-t-il dans le nombre un million?",
+                correctAnswer = "6"
+            ),
+            Question(
+                categoryId = 4,
+                text = "Quelle est la formule de l'aire d'un cercle?",
+                correctAnswer = "Pi * r^2"
+            ),
+            Question(
+                categoryId = 4,
+                text = "Quel est le résultat de 3! (factorielle de 3)?",
+                correctAnswer = "6"
+            ),
+            Question(
+                categoryId = 4,
+                text = "Quelle est la valeur de l'angle droit en degrés?",
+                correctAnswer = "90"
+            ),
+            Question(
+                categoryId = 4,
+                text = "Quelle est la somme des angles d'un triangle?",
+                correctAnswer = "180"
+            ),
+            Question(
+                categoryId = 4,
+                text = "Quel est le nom du point où les axes de coordonnées se rencontrent?",
+                correctAnswer = "Origine"
+            ),
+            Question(
+                categoryId = 4,
+                text = "Quelle est la formule de la distance entre deux points (x1, y1) et (x2, y2)?",
+                correctAnswer = "√((x2-x1)^2 + (y2-y1)^2)"
+            ),
             Question(categoryId = 4, text = "Quel est le nombre d'or?", correctAnswer = "1.618"),
             Question(categoryId = 4, text = "Quel est le carré de 15?", correctAnswer = "225"),
             Question(categoryId = 4, text = "Quel est le logarithme de 1?", correctAnswer = "0"),
-            Question(categoryId = 4, text = "Quelle est la somme des chiffres de 123?", correctAnswer = "6"),
-            Question(categoryId = 4, text = "Combien de solutions l'équation quadratique x^2 + 1 = 0 a-t-elle?", correctAnswer = "Aucune")
+            Question(
+                categoryId = 4,
+                text = "Quelle est la somme des chiffres de 123?",
+                correctAnswer = "6"
+            ),
+            Question(
+                categoryId = 4,
+                text = "Combien de solutions l'équation quadratique x^2 + 1 = 0 a-t-elle?",
+                correctAnswer = "Aucune"
+            )
         )
 
         quizRepository.insertQuestions(mathsQuestions)
@@ -477,24 +761,96 @@ class MainActivity : AppCompatActivity() {
         quizRepository.insertAnswers(mathsAnswers)
 
         val musicQuestions = listOf(
-            Question(categoryId = 5, text = "Quel groupe a chanté 'Bohemian Rhapsody'?", correctAnswer = "Queen"),
-            Question(categoryId = 5, text = "Qui est surnommé le 'Roi de la Pop'?", correctAnswer = "Michael Jackson"),
-            Question(categoryId = 5, text = "Quel est le nom de l'album le plus vendu de tous les temps?", correctAnswer = "Thriller"),
-            Question(categoryId = 5, text = "Quel chanteur est connu pour sa chanson 'Purple Rain'?", correctAnswer = "Prince"),
-            Question(categoryId = 5, text = "Quel groupe a composé 'Hotel California'?", correctAnswer = "Eagles"),
-            Question(categoryId = 5, text = "Quel artiste est surnommé 'The Boss'?", correctAnswer = "Bruce Springsteen"),
-            Question(categoryId = 5, text = "Quel groupe a chanté 'Stairway to Heaven'?", correctAnswer = "Led Zeppelin"),
-            Question(categoryId = 5, text = "Quel chanteur est connu pour ses mouvements de danse 'Moonwalk'?", correctAnswer = "Michael Jackson"),
-            Question(categoryId = 5, text = "Quel groupe a composé 'Smells Like Teen Spirit'?", correctAnswer = "Nirvana"),
-            Question(categoryId = 5, text = "Quel artiste est connu pour son album 'Born to Run'?", correctAnswer = "Bruce Springsteen"),
-            Question(categoryId = 5, text = "Quel groupe a chanté 'Hey Jude'?", correctAnswer = "The Beatles"),
-            Question(categoryId = 5, text = "Quel chanteur a popularisé la chanson 'My Way'?", correctAnswer = "Frank Sinatra"),
-            Question(categoryId = 5, text = "Quel artiste est connu pour sa chanson 'Imagine'?", correctAnswer = "John Lennon"),
-            Question(categoryId = 5, text = "Quel groupe a chanté 'Wonderwall'?", correctAnswer = "Oasis"),
-            Question(categoryId = 5, text = "Quel chanteur a popularisé la chanson 'Like a Rolling Stone'?", correctAnswer = "Bob Dylan"),
-            Question(categoryId = 5, text = "Quel groupe est connu pour la chanson 'Sweet Child O' Mine'?", correctAnswer = "Guns N' Roses"),
-            Question(categoryId = 5, text = "Quel artiste est connu pour l'album 'The Wall'?", correctAnswer = "Pink Floyd"),
-            Question(categoryId = 5, text = "Quel chanteur a popularisé la chanson 'Suspicious Minds'?", correctAnswer = "Elvis Presley")
+            Question(
+                categoryId = 5,
+                text = "Quel groupe a chanté 'Bohemian Rhapsody'?",
+                correctAnswer = "Queen"
+            ),
+            Question(
+                categoryId = 5,
+                text = "Qui est surnommé le 'Roi de la Pop'?",
+                correctAnswer = "Michael Jackson"
+            ),
+            Question(
+                categoryId = 5,
+                text = "Quel est le nom de l'album le plus vendu de tous les temps?",
+                correctAnswer = "Thriller"
+            ),
+            Question(
+                categoryId = 5,
+                text = "Quel chanteur est connu pour sa chanson 'Purple Rain'?",
+                correctAnswer = "Prince"
+            ),
+            Question(
+                categoryId = 5,
+                text = "Quel groupe a composé 'Hotel California'?",
+                correctAnswer = "Eagles"
+            ),
+            Question(
+                categoryId = 5,
+                text = "Quel artiste est surnommé 'The Boss'?",
+                correctAnswer = "Bruce Springsteen"
+            ),
+            Question(
+                categoryId = 5,
+                text = "Quel groupe a chanté 'Stairway to Heaven'?",
+                correctAnswer = "Led Zeppelin"
+            ),
+            Question(
+                categoryId = 5,
+                text = "Quel chanteur est connu pour ses mouvements de danse 'Moonwalk'?",
+                correctAnswer = "Michael Jackson"
+            ),
+            Question(
+                categoryId = 5,
+                text = "Quel groupe a composé 'Smells Like Teen Spirit'?",
+                correctAnswer = "Nirvana"
+            ),
+            Question(
+                categoryId = 5,
+                text = "Quel artiste est connu pour son album 'Born to Run'?",
+                correctAnswer = "Bruce Springsteen"
+            ),
+            Question(
+                categoryId = 5,
+                text = "Quel groupe a chanté 'Hey Jude'?",
+                correctAnswer = "The Beatles"
+            ),
+            Question(
+                categoryId = 5,
+                text = "Quel chanteur a popularisé la chanson 'My Way'?",
+                correctAnswer = "Frank Sinatra"
+            ),
+            Question(
+                categoryId = 5,
+                text = "Quel artiste est connu pour sa chanson 'Imagine'?",
+                correctAnswer = "John Lennon"
+            ),
+            Question(
+                categoryId = 5,
+                text = "Quel groupe a chanté 'Wonderwall'?",
+                correctAnswer = "Oasis"
+            ),
+            Question(
+                categoryId = 5,
+                text = "Quel chanteur a popularisé la chanson 'Like a Rolling Stone'?",
+                correctAnswer = "Bob Dylan"
+            ),
+            Question(
+                categoryId = 5,
+                text = "Quel groupe est connu pour la chanson 'Sweet Child O' Mine'?",
+                correctAnswer = "Guns N' Roses"
+            ),
+            Question(
+                categoryId = 5,
+                text = "Quel artiste est connu pour l'album 'The Wall'?",
+                correctAnswer = "Pink Floyd"
+            ),
+            Question(
+                categoryId = 5,
+                text = "Quel chanteur a popularisé la chanson 'Suspicious Minds'?",
+                correctAnswer = "Elvis Presley"
+            )
         )
 
         quizRepository.insertQuestions(musicQuestions)
