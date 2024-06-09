@@ -30,6 +30,7 @@ class QuizActivity : AppCompatActivity() {
     private lateinit var wrongAnswersTextView: TextView
     private lateinit var timerTextView: TextView
     private lateinit var countDownTimer: CountDownTimer
+    private lateinit var category: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -48,7 +49,7 @@ class QuizActivity : AppCompatActivity() {
         wrongAnswersTextView = findViewById(R.id.wrongAnswersTextView)
         timerTextView = findViewById(R.id.timerTextView)
 
-        val category = intent.getStringExtra("CATEGORY") ?: "Unknown"
+        category = intent.getStringExtra("CATEGORY") ?: "Unknown"
         loadQuestions(category)
 
         nextButton.setOnClickListener {
@@ -126,7 +127,7 @@ class QuizActivity : AppCompatActivity() {
 
     private fun showScore() {
         val intent = Intent(this, ScoreActivity::class.java)
-        intent.putExtra("CATEGORY", intent.getStringExtra("CATEGORY"))
+        intent.putExtra("CATEGORY", category)
         intent.putExtra("CORRECT_ANSWERS", correctAnswers)
         intent.putExtra("WRONG_ANSWERS", wrongAnswers)
         startActivity(intent)
