@@ -1,5 +1,9 @@
-package com.example.tp1
+package com.example.tp1.database
 
+import com.example.tp1.Answer
+import com.example.tp1.Category
+import com.example.tp1.Question
+import com.example.tp1.QuizRepository
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

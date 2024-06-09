@@ -91,7 +91,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             android:background="@drawable/button_logout"
-            android:text="Déconnexion" />
+            android:text="Déconnexion"
+            android:textColor="@android:color/white" />
     </LinearLayout>
 
 </RelativeLayout>
