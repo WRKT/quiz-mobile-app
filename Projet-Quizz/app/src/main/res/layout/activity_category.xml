@@ -7,68 +7,92 @@
     tools:context=".CategoryActivity">
 
     <LinearLayout
+        android:id="@+id/centerBox"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="16dp">
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Categorie Quizz"
+            android:layout_marginBottom="30dp"
+            android:text="Categorie Quiz"
             android:textAlignment="center"
-            android:textSize="32dp"
+            android:textSize="32sp"
             android:textStyle="bold" />
 
-        <Button
-            android:id="@+id/videoGamesButton"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            android:background="@drawable/button_background"
-            android:text="Jeux-vidéos" />
-
-        <Button
-            android:id="@+id/cinemaButton"
-            android:layout_width="300dp"
+        <GridLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:background="@drawable/button_background"
-            android:text="Cinéma" />
+            android:alignmentMode="alignMargins"
+            android:columnCount="2"
+            android:orientation="horizontal"
+            android:rowOrderPreserved="false">
 
-        <Button
-            android:id="@+id/sportButton"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/button_background"
-            android:text="Sport" />
+            <Button
+                android:id="@+id/videoGamesButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:layout_margin="10dp"
+                android:background="@drawable/button_background"
+                android:text="Jeux-vidéos" />
 
-        <Button
-            android:id="@+id/mathsButton"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/button_background"
-            android:text="Mathématiques" />
+            <Button
+                android:id="@+id/cinemaButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:layout_margin="10dp"
+                android:background="@drawable/button_background"
+                android:text="Cinéma" />
 
-        <Button
-            android:id="@+id/musicButton"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/button_background"
-            android:text="Musique" />
+            <Button
+                android:id="@+id/sportButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:layout_margin="10dp"
+                android:background="@drawable/button_background"
+                android:text="Sport" />
+
+            <Button
+                android:id="@+id/mathsButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:layout_margin="10dp"
+                android:background="@drawable/button_background"
+                android:text="Mathématiques" />
+
+            <Button
+                android:id="@+id/musicButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:layout_margin="10dp"
+                android:background="@drawable/button_background"
+                android:text="Musique" />
+
+        </GridLayout>
 
         <Button
             android:id="@+id/logoutButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
-            android:background="@drawable/button_background"
-            android:text="Deconnexion"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/button_logout"
+            android:text="Déconnexion"
             android:textColor="@android:color/white" />
-
     </LinearLayout>
 
 </RelativeLayout>

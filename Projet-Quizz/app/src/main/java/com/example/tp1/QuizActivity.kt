@@ -126,7 +126,6 @@ class QuizActivity : AppCompatActivity() {
 
     private fun showScore() {
         val intent = Intent(this, ScoreActivity::class.java)
-        intent.putExtra("USERNAME", intent.getStringExtra("USERNAME"))
         intent.putExtra("CATEGORY", intent.getStringExtra("CATEGORY"))
         intent.putExtra("CORRECT_ANSWERS", correctAnswers)
         intent.putExtra("WRONG_ANSWERS", wrongAnswers)

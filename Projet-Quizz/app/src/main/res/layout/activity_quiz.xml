@@ -5,13 +5,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
-    tools:context=".QuizzActivity">
+    tools:context=".QuizActivity">
 
     <TextView
         android:id="@+id/questionNumberView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
+        android:text="Question "
+        android:textSize="18sp"
+        android:textStyle="bold"
         android:layout_marginTop="50dp" />
 
     <TextView
@@ -24,7 +27,7 @@
         android:text="Question?"
         android:textColor="@android:color/black"
         android:textSize="20sp"
-        android:textStyle="bold" />
+        android:textStyle="italic" />
 
     <GridLayout
         android:id="@+id/answerGrid"
