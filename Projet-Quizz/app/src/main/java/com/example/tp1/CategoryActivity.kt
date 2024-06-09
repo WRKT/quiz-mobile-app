@@ -24,6 +24,7 @@ class CategoryActivity : AppCompatActivity() {
         val sportButton = findViewById<Button>(R.id.sportButton)
         val mathButton = findViewById<Button>(R.id.mathsButton)
         val musicButton = findViewById<Button>(R.id.musicButton)
+        val historyButton = findViewById<Button>(R.id.historyButton)
         val logoutButton = findViewById<Button>(R.id.logoutButton)
 
         setupButton(videoGamesButton, "videoGames")
@@ -31,6 +32,7 @@ class CategoryActivity : AppCompatActivity() {
         setupButton(sportButton, "sport")
         setupButton(mathButton, "maths")
         setupButton(musicButton, "music")
+        setupButton(historyButton, "history")
 
         logoutButton.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
@@ -68,6 +70,7 @@ class CategoryActivity : AppCompatActivity() {
             "sport" -> "Sport"
             "maths" -> "Mathématiques"
             "music" -> "Musique"
+            "history" -> "Histoire"
             else -> categoryName
         }
     }

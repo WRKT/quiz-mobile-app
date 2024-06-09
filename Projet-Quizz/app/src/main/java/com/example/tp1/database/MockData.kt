@@ -17,7 +17,8 @@ class MockData(private val quizRepository: QuizRepository) {
                 Category(name = "cinema"),
                 Category(name = "sport"),
                 Category(name = "maths"),
-                Category(name = "music")
+                Category(name = "music"),
+                Category(name = "history")
             )
             quizRepository.insertCategories(categories)
 
@@ -879,36 +880,223 @@ class MockData(private val quizRepository: QuizRepository) {
                 Answer(questionId = 88, text = "Elvis Presley"),
                 Answer(questionId = 88, text = "Tony Bennett"),
                 Answer(questionId = 88, text = "Dean Martin"),
-                Answer(questionId = 89, text = "Queen"),
-                Answer(questionId = 89, text = "The Beatles"),
-                Answer(questionId = 89, text = "Led Zeppelin"),
-                Answer(questionId = 89, text = "Pink Floyd"),
-                Answer(questionId = 90, text = "John Lennon"),
-                Answer(questionId = 90, text = "Paul McCartney"),
-                Answer(questionId = 90, text = "George Harrison"),
-                Answer(questionId = 90, text = "Ringo Starr"),
-                Answer(questionId = 91, text = "Oasis"),
-                Answer(questionId = 91, text = "Blur"),
-                Answer(questionId = 91, text = "Pulp"),
-                Answer(questionId = 91, text = "Radiohead"),
-                Answer(questionId = 92, text = "Bob Dylan"),
-                Answer(questionId = 92, text = "Bruce Springsteen"),
-                Answer(questionId = 92, text = "Neil Young"),
-                Answer(questionId = 92, text = "Eric Clapton"),
-                Answer(questionId = 93, text = "Guns N' Roses"),
-                Answer(questionId = 93, text = "Metallica"),
-                Answer(questionId = 93, text = "Bon Jovi"),
-                Answer(questionId = 93, text = "Def Leppard"),
-                Answer(questionId = 94, text = "Pink Floyd"),
-                Answer(questionId = 94, text = "Led Zeppelin"),
-                Answer(questionId = 94, text = "The Who"),
-                Answer(questionId = 94, text = "The Rolling Stones"),
-                Answer(questionId = 95, text = "Elvis Presley"),
-                Answer(questionId = 95, text = "Johnny Cash"),
-                Answer(questionId = 95, text = "Roy Orbison"),
-                Answer(questionId = 95, text = "Buddy Holly")
+                Answer(questionId = 89, text = "John Lennon"),
+                Answer(questionId = 89, text = "Paul McCartney"),
+                Answer(questionId = 89, text = "George Harrison"),
+                Answer(questionId = 89, text = "Ringo Starr"),
+                Answer(questionId = 90, text = "Oasis"),
+                Answer(questionId = 90, text = "Blur"),
+                Answer(questionId = 90, text = "Pulp"),
+                Answer(questionId = 90, text = "Radiohead"),
+                Answer(questionId = 91, text = "Bob Dylan"),
+                Answer(questionId = 91, text = "Bruce Springsteen"),
+                Answer(questionId = 91, text = "Neil Young"),
+                Answer(questionId = 91, text = "Eric Clapton"),
+                Answer(questionId = 92, text = "Guns N' Roses"),
+                Answer(questionId = 92, text = "Metallica"),
+                Answer(questionId = 92, text = "Bon Jovi"),
+                Answer(questionId = 92, text = "Def Leppard"),
+                Answer(questionId = 93, text = "Pink Floyd"),
+                Answer(questionId = 93, text = "Led Zeppelin"),
+                Answer(questionId = 93, text = "The Who"),
+                Answer(questionId = 93, text = "The Rolling Stones"),
+                Answer(questionId = 94, text = "Elvis Presley"),
+                Answer(questionId = 94, text = "Johnny Cash"),
+                Answer(questionId = 94, text = "Roy Orbison"),
+                Answer(questionId = 94, text = "Buddy Holly")
             )
+
             quizRepository.insertAnswers(musicAnswers)
+
+            val historyQuestions = listOf(
+                Question(
+                    categoryId = 6,
+                    text = "Quel événement marquant a eu lieu le 14 juillet 1789 en France?",
+                    correctAnswer = "La prise de la Bastille"
+                ),
+                Question(
+                    categoryId = 6,
+                    text = "Qui était le premier président des États-Unis?",
+                    correctAnswer = "George Washington"
+                ),
+                Question(
+                    categoryId = 6,
+                    text = "Quel empire est connu pour avoir conquis la majeure partie de l'Europe sous la direction de Napoléon?",
+                    correctAnswer = "L'Empire français"
+                ),
+                Question(
+                    categoryId = 6,
+                    text = "Quelle guerre a opposé le Nord et le Sud des États-Unis de 1861 à 1865?",
+                    correctAnswer = "La guerre de Sécession"
+                ),
+                Question(
+                    categoryId = 6,
+                    text = "Quel célèbre mur de Berlin est tombé en 1989?",
+                    correctAnswer = "Le mur de Berlin"
+                ),
+                Question(
+                    categoryId = 6,
+                    text = "Qui était le chef du Troisième Reich pendant la Seconde Guerre mondiale?",
+                    correctAnswer = "Adolf Hitler"
+                ),
+                Question(
+                    categoryId = 6,
+                    text = "Quel pharaon égyptien est connu pour son tombeau intact découvert en 1922?",
+                    correctAnswer = "Toutânkhamon"
+                ),
+                Question(
+                    categoryId = 6,
+                    text = "Quel traité de paix a mis fin à la Première Guerre mondiale?",
+                    correctAnswer = "Le traité de Versailles"
+                ),
+                Question(
+                    categoryId = 6,
+                    text = "Quelle révolution a eu lieu en Russie en 1917?",
+                    correctAnswer = "La révolution d'Octobre"
+                ),
+                Question(
+                    categoryId = 6,
+                    text = "Qui était le célèbre empereur de l'Empire romain qui a été assassiné en 44 av. J.-C.?",
+                    correctAnswer = "Jules César"
+                ),
+                Question(
+                    categoryId = 6,
+                    text = "Quelle civilisation ancienne est connue pour ses pyramides et son écriture hiéroglyphique?",
+                    correctAnswer = "L'Égypte ancienne"
+                ),
+                Question(
+                    categoryId = 6,
+                    text = "Quel explorateur a découvert l'Amérique en 1492?",
+                    correctAnswer = "Christophe Colomb"
+                ),
+                Question(
+                    categoryId = 6,
+                    text = "Quel mouvement de renouveau culturel et artistique a eu lieu en Europe au XIVe siècle?",
+                    correctAnswer = "La Renaissance"
+                ),
+                Question(
+                    categoryId = 6,
+                    text = "Quelle guerre a opposé la France et l'Angleterre de 1337 à 1453?",
+                    correctAnswer = "La guerre de Cent Ans"
+                ),
+                Question(
+                    categoryId = 6,
+                    text = "Quel traité a marqué la fin de l'Empire ottoman après la Première Guerre mondiale?",
+                    correctAnswer = "Le traité de Sèvres"
+                ),
+                Question(
+                    categoryId = 6,
+                    text = "Qui était le célèbre révolutionnaire et homme politique argentin qui a joué un rôle clé dans la révolution cubaine?",
+                    correctAnswer = "Che Guevara"
+                ),
+                Question(
+                    categoryId = 6,
+                    text = "Quel roi anglais a eu six épouses et a fondé l'Église anglicane?",
+                    correctAnswer = "Henri VIII"
+                ),
+                Question(
+                    categoryId = 6,
+                    text = "Quelle bataille décisive de la Seconde Guerre mondiale a eu lieu en Normandie en 1944?",
+                    correctAnswer = "Le débarquement de Normandie"
+                ),
+                Question(
+                    categoryId = 6,
+                    text = "Quel célèbre scientifique est connu pour sa théorie de la relativité?",
+                    correctAnswer = "Albert Einstein"
+                ),
+                Question(
+                    categoryId = 6,
+                    text = "Quel empire ancien était centré autour de la ville de Rome?",
+                    correctAnswer = "L'Empire romain"
+                )
+            )
+
+            quizRepository.insertQuestions(historyQuestions)
+
+            val historyAnswers = listOf(
+                Answer(questionId = 95, text = "La prise de la Bastille"),
+                Answer(questionId = 95, text = "La Révolution française"),
+                Answer(questionId = 95, text = "Le couronnement de Napoléon"),
+                Answer(questionId = 95, text = "La Déclaration des droits de l'homme"),
+                Answer(questionId = 96, text = "George Washington"),
+                Answer(questionId = 96, text = "Thomas Jefferson"),
+                Answer(questionId = 96, text = "Abraham Lincoln"),
+                Answer(questionId = 96, text = "John Adams"),
+                Answer(questionId = 97, text = "L'Empire français"),
+                Answer(questionId = 97, text = "L'Empire britannique"),
+                Answer(questionId = 97, text = "L'Empire romain"),
+                Answer(questionId = 97, text = "L'Empire espagnol"),
+                Answer(questionId = 98, text = "La guerre de Sécession"),
+                Answer(questionId = 98, text = "La guerre d'Indépendance"),
+                Answer(questionId = 98, text = "La guerre de 1812"),
+                Answer(questionId = 98, text = "La guerre du Mexique"),
+                Answer(questionId = 99, text = "Le mur de Berlin"),
+                Answer(questionId = 99, text = "Le mur de la Chine"),
+                Answer(questionId = 99, text = "Le mur de Hadrien"),
+                Answer(questionId = 99, text = "Le mur de Trump"),
+                Answer(questionId = 100, text = "Adolf Hitler"),
+                Answer(questionId = 100, text = "Joseph Staline"),
+                Answer(questionId = 100, text = "Winston Churchill"),
+                Answer(questionId = 100, text = "Franklin D. Roosevelt"),
+                Answer(questionId = 101, text = "Toutânkhamon"),
+                Answer(questionId = 101, text = "Ramsès II"),
+                Answer(questionId = 101, text = "Cléopâtre"),
+                Answer(questionId = 101, text = "Akhenaton"),
+                Answer(questionId = 102, text = "Le traité de Versailles"),
+                Answer(questionId = 102, text = "Le traité de Paris"),
+                Answer(questionId = 102, text = "Le traité de Brest-Litovsk"),
+                Answer(questionId = 102, text = "Le traité de Trianon"),
+                Answer(questionId = 103, text = "La révolution d'Octobre"),
+                Answer(questionId = 103, text = "La révolution de Février"),
+                Answer(questionId = 103, text = "La révolution russe"),
+                Answer(questionId = 103, text = "La révolution bolchévique"),
+                Answer(questionId = 104, text = "Jules César"),
+                Answer(questionId = 104, text = "Néron"),
+                Answer(questionId = 104, text = "Auguste"),
+                Answer(questionId = 104, text = "Caligula"),
+                Answer(questionId = 105, text = "L'Égypte ancienne"),
+                Answer(questionId = 105, text = "La Grèce antique"),
+                Answer(questionId = 105, text = "La Mésopotamie"),
+                Answer(questionId = 105, text = "Les Mayas"),
+                Answer(questionId = 106, text = "Christophe Colomb"),
+                Answer(questionId = 106, text = "Amerigo Vespucci"),
+                Answer(questionId = 106, text = "Vasco de Gama"),
+                Answer(questionId = 106, text = "Fernand de Magellan"),
+                Answer(questionId = 107, text = "La Renaissance"),
+                Answer(questionId = 107, text = "Le Moyen Âge"),
+                Answer(questionId = 107, text = "L'Âge des Lumières"),
+                Answer(questionId = 107, text = "La Révolution industrielle"),
+                Answer(questionId = 108, text = "La guerre de Cent Ans"),
+                Answer(questionId = 108, text = "La guerre de Trente Ans"),
+                Answer(questionId = 108, text = "La guerre de Succession d'Espagne"),
+                Answer(questionId = 108, text = "La guerre des Roses"),
+                Answer(questionId = 109, text = "Le traité de Sèvres"),
+                Answer(questionId = 109, text = "Le traité de Lausanne"),
+                Answer(questionId = 109, text = "Le traité de Saint-Germain"),
+                Answer(questionId = 109, text = "Le traité de Neuilly"),
+                Answer(questionId = 110, text = "Che Guevara"),
+                Answer(questionId = 110, text = "Fidel Castro"),
+                Answer(questionId = 110, text = "Simón Bolívar"),
+                Answer(questionId = 110, text = "José de San Martín"),
+                Answer(questionId = 111, text = "Henri VIII"),
+                Answer(questionId = 111, text = "Richard III"),
+                Answer(questionId = 111, text = "Édouard VI"),
+                Answer(questionId = 111, text = "Jacques II"),
+                Answer(questionId = 112, text = "Le débarquement de Normandie"),
+                Answer(questionId = 112, text = "La bataille de Stalingrad"),
+                Answer(questionId = 112, text = "La bataille de Midway"),
+                Answer(questionId = 112, text = "La bataille des Ardennes"),
+                Answer(questionId = 113, text = "Albert Einstein"),
+                Answer(questionId = 113, text = "Isaac Newton"),
+                Answer(questionId = 113, text = "Galilée"),
+                Answer(questionId = 113, text = "Nicolas Copernic"),
+                Answer(questionId = 114, text = "L'Empire romain"),
+                Answer(questionId = 114, text = "L'Empire byzantin"),
+                Answer(questionId = 114, text = "L'Empire carolingien"),
+                Answer(questionId = 114, text = "L'Empire ottoman")
+            )
+
+            quizRepository.insertAnswers(historyAnswers)
         }
     }
 }
