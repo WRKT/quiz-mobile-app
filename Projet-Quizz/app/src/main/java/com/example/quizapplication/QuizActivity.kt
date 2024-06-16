@@ -1,4 +1,4 @@
-package com.example.tp1
+package com.example.quizapplication
 
 import android.content.Intent
 import android.os.Bundle

@@ -1,4 +1,4 @@
-package com.example.tp1
+package com.example.quizapplication
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

@@ -1,4 +1,4 @@
-package com.example.tp1
+package com.example.quizapplication
 
 import android.content.Context
 import android.content.Intent

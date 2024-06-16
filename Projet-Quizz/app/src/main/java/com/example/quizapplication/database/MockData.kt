@@ -1,9 +1,9 @@
-package com.example.tp1.database
+package com.example.quizapplication.database
 
-import com.example.tp1.Answer
-import com.example.tp1.Category
-import com.example.tp1.Question
-import com.example.tp1.QuizRepository
+import com.example.quizapplication.Answer
+import com.example.quizapplication.Category
+import com.example.quizapplication.Question
+import com.example.quizapplication.QuizRepository
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
