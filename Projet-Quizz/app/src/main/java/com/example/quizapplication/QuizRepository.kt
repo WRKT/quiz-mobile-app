@@ -1,4 +1,4 @@
-package com.example.tp1
+package com.example.quizapplication
 
 class QuizRepository(private val database: QuizDatabase) {
 

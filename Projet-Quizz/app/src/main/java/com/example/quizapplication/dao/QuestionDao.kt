@@ -1,9 +1,9 @@
-package com.example.tp1.dao
+package com.example.quizapplication.dao
 
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
-import com.example.tp1.Question
+import com.example.quizapplication.Question
 
 @Dao
 interface QuestionDao {
