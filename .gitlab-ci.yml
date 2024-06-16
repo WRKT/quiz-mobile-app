@@ -25,9 +25,7 @@ before_script:
   - if [ ! -f ./gradlew ]; then echo "gradlew not found in $(pwd), listing contents:"; ls -al; fi
   - if [ ! -f ./gradlew ]; then echo "gradlew still not found, exiting"; exit 1; fi
   - chmod +x ./gradlew
-
-  # Verify the working directory and the build outputs
-  - echo "Current working directory: $(pwd)"
+  
   - echo "Listing current directory contents:"
   - ls -al
   - echo "Listing app/build/outputs directory contents:"
