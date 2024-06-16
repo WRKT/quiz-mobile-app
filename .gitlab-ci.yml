@@ -26,6 +26,13 @@ before_script:
   - if [ ! -f ./gradlew ]; then echo "gradlew still not found, exiting"; exit 1; fi
   - chmod +x ./gradlew
 
+  # Verify the working directory and the build outputs
+  - echo "Current working directory: $(pwd)"
+  - echo "Listing current directory contents:"
+  - ls -al
+  - echo "Listing app/build/outputs directory contents:"
+  - ls -al app/build/outputs || echo "app/build/outputs directory not found"
+
 lintDebug:
   interruptible: true
   stage: build
@@ -44,7 +51,7 @@ assembleDebug:
     - ./gradlew assembleDebug
   artifacts:
     paths:
-      - app/build/outputs/
+      - app/build/outputs/apk/debug/app-debug.apk
 
 debugTests:
   needs: [lintDebug, assembleDebug]
