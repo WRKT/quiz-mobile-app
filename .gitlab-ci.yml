@@ -1,13 +1,10 @@
-# Use an image with the JDK for building Android projects
 image: eclipse-temurin:17-jdk-jammy
 
-# Define environment variables
 variables:
   ANDROID_COMPILE_SDK: "34"
-  ANDROID_BUILD_TOOLS: "34.0.0"
+  ANDROID_BUILD_TOOLS: "34"
   ANDROID_SDK_TOOLS: "9477386"
 
-# Packages installation before running the script
 before_script:
   - apt-get --quiet update --yes
   - apt-get --quiet install --yes wget unzip
@@ -22,9 +19,13 @@ before_script:
   - sdkmanager "platforms;android-${ANDROID_COMPILE_SDK}"
   - sdkmanager "platform-tools"
   - sdkmanager "build-tools;${ANDROID_BUILD_TOOLS}"
+
+  # Change to the project directory where `gradlew` is located
+  - cd Projet-Quizz
+  - if [ ! -f ./gradlew ]; then echo "gradlew not found in $(pwd), listing contents:"; ls -al; fi
+  - if [ ! -f ./gradlew ]; then echo "gradlew still not found, exiting"; exit 1; fi
   - chmod +x ./gradlew
 
-# Lint the project
 lintDebug:
   interruptible: true
   stage: build
@@ -36,7 +37,6 @@ lintDebug:
     expose_as: "lint-report"
     when: always
 
-# Assemble the debug build
 assembleDebug:
   interruptible: true
   stage: build
@@ -46,7 +46,6 @@ assembleDebug:
     paths:
       - app/build/outputs/
 
-# Run unit tests
 debugTests:
   needs: [lintDebug, assembleDebug]
   interruptible: true
